@@ -22,7 +22,7 @@ const App = () => {
     inviteInfo: null,
     sendInfo: null,
     leaveInfo: null,
-    accounts: ['cs01', 'cs02'],
+    accounts: import.meta.env.YUNXIN_ACCOUNTS?.split(','),
     account: null
   })
 
@@ -34,6 +34,8 @@ const App = () => {
     const { account } = values
     signal.instance = signal.connect({
       account,
+      appKey: import.meta.env.YUNXIN_APP_KEY,
+      token: import.meta.env.YUNXIN_ACCOUNT_TOKEN,
       onconnect: () => setState({ connectInfo: { data: '连接成功' }, account }),
       ondisconnect: (error) => console.log(error)
     })

@@ -14,8 +14,6 @@ export default class Signal {
   constructor() {
     //参数说明：https://doc.yunxin.163.com/TM5MzM5Njk/docs/zE0NDY4Njc?platform=web#%E5%8F%82%E6%95%B0%E8%A7%A3%E9%87%8A
     this.options = {
-      appKey: '', //在云信管理后台查看应用的 appKey
-      token: '', //帐号的 token, 用于建立连接
       onerror: () => console.log(`Error:`, e)
     }
   }
